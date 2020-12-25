@@ -28,7 +28,7 @@ class energy:
 
 exmpl1 = energy("замена толпивоподающие системы", 545999,"мазут","Топливоподающая система",17300)
 exmpl2 = energy("установка топливных фильтров", 124700,"мазут","Топливоподающая система",6800)
-exmpl3 = energy("Установка новых топливных ёмкостей", 221000,"мазут","Топливные резервуары",13400)
+exmpl3 = energy("установка новых топливных ёмкостей", 221000,"мазут","Топливные резервуары",13400)
 #print (exmpl1.ocup())
 #$print (exmpl1.percentof())
 
@@ -43,7 +43,12 @@ elist.append(exmpl3)
 import csv
 import codecs
  
-with codecs.open('1.csv', encoding="utf-16") as File:  
+with open('1.csv', encoding='utf-8', newline='', errors='ignore') as File:  
     reader = csv.reader(File)
     for row in reader:
         print(row)
+
+with open('1.csv', encoding='utf-8') as r_file:
+    reader1 = csv.DictReader(r_file, delimiter = ",")
+    for row in reader1:
+         print(row)
