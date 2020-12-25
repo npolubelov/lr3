@@ -59,3 +59,11 @@ with open('3.csv', mode="w", encoding='utf-8') as w_file:
     writer.writerow(['замена толпивоподающие системы','545999','мазут','Топливоподающая система','17300'])
     writer.writerow(['установка топливных фильтров','124700','мазут','Топливоподающая система','6800'])
     writer.writerow(['установка новых топливных ёмкостей','221000','мазут','Топливные резервуары','13400'])
+
+with open("4.csv", mode="w", encoding='utf-8') as w_file1:
+    types = ['self.name','self.price','self.energytype','self.objectof','self.mdiffrnce']
+    writer1 = csv.DictWriter(w_file1, delimiter = ",", lineterminator="\r", fieldnames=types)
+    writer1.writeheader()
+    writer1.writerow({'self.name': 'замена толпивоподающие системы', 'self.price': '545999', 'self.energytype': 'мазут', 'self.objectof': 'Топливоподающая система', 'self.mdiffrnce': '17300'})
+    writer1.writerow({'self.name': 'установка топливных фильтров', 'self.price': '124700', 'self.energytype': 'мазут', 'self.objectof': 'Топливоподающая система', 'self.mdiffrnce': '6800'})
+    writer1.writerow({'self.name': 'установка новых топливных ёмкостей', 'self.price': '221000', 'self.energytype': 'мазут', 'self.objectof': 'Топливные резервуары', 'self.mdiffrnce': '13400'})
