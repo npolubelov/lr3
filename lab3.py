@@ -49,6 +49,13 @@ with open('1.csv', encoding='utf-8', newline='', errors='ignore') as File:
         print(row)
 
 with open('1.csv', encoding='utf-8') as r_file:
-    reader1 = csv.DictReader(r_file, delimiter = ",")
+    reader1 = csv.DictReader(r_file)
     for row in reader1:
          print(row)
+
+with open('3.csv', mode="w", encoding='utf-8') as w_file:
+    writer = csv.writer(w_file, delimiter = ",", lineterminator="\r")
+    writer.writerow(['self.name','self.price','self.energytype','self.objectof','self.mdiffrnce'])
+    writer.writerow(['замена толпивоподающие системы','545999','мазут','Топливоподающая система','17300'])
+    writer.writerow(['установка топливных фильтров','124700','мазут','Топливоподающая система','6800'])
+    writer.writerow(['установка новых топливных ёмкостей','221000','мазут','Топливные резервуары','13400'])
