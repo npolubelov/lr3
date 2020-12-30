@@ -29,6 +29,7 @@ class energy:
 exmpl1 = energy("замена толпивоподающие системы", 545999,"мазут","Топливоподающая система",17300)
 exmpl2 = energy("установка топливных фильтров", 124700,"мазут","Топливоподающая система",6800)
 exmpl3 = energy("установка новых топливных ёмкостей", 221000,"мазут","Топливные резервуары",13400)
+exmpl4 = energy(1,1,1,1,1)
 #print (exmpl1.ocup())
 #$print (exmpl1.percentof())
 
@@ -67,3 +68,10 @@ with open("4.csv", mode="w", encoding='utf-8') as w_file1:
     writer1.writerow({'self.name': 'замена толпивоподающие системы', 'self.price': '545999', 'self.energytype': 'мазут', 'self.objectof': 'Топливоподающая система', 'self.mdiffrnce': '17300'})
     writer1.writerow({'self.name': 'установка топливных фильтров', 'self.price': '124700', 'self.energytype': 'мазут', 'self.objectof': 'Топливоподающая система', 'self.mdiffrnce': '6800'})
     writer1.writerow({'self.name': 'установка новых топливных ёмкостей', 'self.price': '221000', 'self.energytype': 'мазут', 'self.objectof': 'Топливные резервуары', 'self.mdiffrnce': '13400'})
+
+with open("5.csv", mode="w", encoding='utf-8') as w_file1:
+    types = ['self.name','self.price','self.energytype','self.objectof','self.mdiffrnce']
+    writer1 = csv.DictWriter(w_file1, delimiter = ",", lineterminator="\r", fieldnames=types)
+    writer1.writeheader()
+    writer1.writerow({'self.name':exmpl1.name,'self.price':exmpl1.price,'self.energytype':exmpl1.energytype,'self.objectof':exmpl1.objectof,'self.mdiffrnce':exmpl1.mdiffrnce})
+
